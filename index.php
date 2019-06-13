@@ -1,3 +1,7 @@
+<?php
+include_once 'connection.php' ;
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,7 +43,7 @@
       <p class="lead" style="text-align:center;">Team selection tournament 2019.</p>
       <hr class="my-4">
       <p>
-      <form class="form-inline">
+      <form class="form-inline" >
           <div class="form-group mb-2">
             <label for="player1" class="sr-only">Player 1 : </label>
             <input type="text" readonly class="form-control-plaintext" id="player1" value="Player 1 :" style="color:green; font-weight:bold; ">
