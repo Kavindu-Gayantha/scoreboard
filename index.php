@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Badminton 2019</title>
+    <!-- <link rel="stylesheet" href="css" class="rel">
+    <link rel="stylesheet" href="js" class="rel"> -->
   </head>
   <body>
    
@@ -16,27 +18,51 @@
     <!-- bootstrap header start -->
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="index.php">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="#">Scores <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Player 1 details</a>
-          <a class="nav-item nav-link" href="#">Player 2 details</a>
+          <a class="nav-item nav-link" href="#">court 1</a>
+          <a class="nav-item nav-link" href="#">court 2 </a>
           <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
       </div>
     </nav>
 
     <div class="container">
+    <p>
     <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <h1 class="display-4" style="text-align:center; font-weight:bold; color:darkblue;">Players</h1>
+      <p class="lead" style="text-align:center;">Team selection tournament 2019.</p>
       <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      <p>
+      <form class="form-inline">
+          <div class="form-group mb-2">
+            <label for="player1" class="sr-only">Player 1 : </label>
+            <input type="text" readonly class="form-control-plaintext" id="player1" value="Player 1 :" style="color:green; font-weight:bold; ">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword2" class="sr-only"></label>
+            <input type="text" class="form-control" id="player1_name" placeholder="Player 1 ">
+          </div>
+          <div class="form-group mb-2">
+            <label for="player1" class="sr-only">Player 2 : </label>
+            <input type="text" readonly class="form-control-plaintext" id="player2" value="Player 2 :" style="color:green; font-weight:bold; ">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <label  class="sr-only"></label>
+            <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 ">
+          </div>
+          <div style="float:center;">
+          <button type="submit" class="btn btn-primary mb-2" >Confirm identity</button>
+          </div>
+          
+      </form>
+      <!-- </p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
     </div>
     
     </div>
