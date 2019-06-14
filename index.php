@@ -29,7 +29,7 @@ include_once 'connection.php' ;
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="#">Scores <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">court 1</a>
+          <a class="nav-item nav-link" href="index.php">court 1</a>
           <a class="nav-item nav-link" href="#">court 2 </a>
           <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
@@ -43,14 +43,18 @@ include_once 'connection.php' ;
       <p class="lead" style="text-align:center;">Team selection tournament 2019.</p>
       <hr class="my-4">
       <p>
-      <form class="form-inline" >
+      <fieldset>
+      <legend>court1 :</legend>
+      
+     
+      <form class="form-inline" action="index.php" method="post">
           <div class="form-group mb-2">
             <label for="player1" class="sr-only">Player 1 : </label>
             <input type="text" readonly class="form-control-plaintext" id="player1" value="Player 1 :" style="color:green; font-weight:bold; ">
           </div>
           <div class="form-group mx-sm-3 mb-2">
-            <label for="inputPassword2" class="sr-only"></label>
-            <input type="text" class="form-control" id="player1_name" placeholder="Player 1 ">
+            <label for="inputPlayer1name" class="sr-only"></label>
+            <input type="text" class="form-control" id="player1_name" placeholder="Player 1 " name="player1_name">
           </div>
           <div class="form-group mb-2">
             <label for="player1" class="sr-only">Player 2 : </label>
@@ -61,15 +65,62 @@ include_once 'connection.php' ;
             <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 ">
           </div>
           <div style="float:center;">
-          <button type="submit" class="btn btn-primary mb-2" >Confirm identity</button>
+          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" >Confirm identity</button>
           </div>
+        
           
       </form>
+          
+      <?php
+      if(isset($_POST['confirmPlayers']))
+      {
+        $sql = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
+      }
+      ?>
+      </fieldset>
       <!-- </p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
-    </div>
-    
-    </div>
+      <hr class="my-4"> 
+      <!-- view scores  -->
+       
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+          <div class="col-xs-1">
+                <label for="ex1">Player 1 scores</label>
+                <input class="form-control" id="ex2" type="text" readonly>
+          </div>
+        </div>
+        <!-- <div class="col-md-auto">
+          Variable width content
+        </div> -->
+        <div class="col col-lg-2">
+              <div class="col-xs-1">
+                <label for="ex1">Player 2 scores</label>
+                <input class="form-control" id="ex2" type="text" readonly>
+              </div>
+        </div>
+      </div><!--  score ends -->
+
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+          <div class="col-xs-1">
+                <label for="ex1">Player 1 scores</label>
+                <input class="form-control" id="ex2" type="text" readonly>
+          </div>
+        </div>
+        <!-- <div class="col-md-auto">
+          Variable width content
+        </div> -->
+        <div class="col col-lg-2">
+              <div class="col-xs-1">
+                <label for="ex1">Player 2 scores</label>
+                <input class="form-control" id="ex2" type="text" readonly>
+              </div>
+        </div>
+      </div>
+  
+     
+    </div><!-- jumbortan ends -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -77,4 +128,6 @@ include_once 'connection.php' ;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+
+ 
 </html>
