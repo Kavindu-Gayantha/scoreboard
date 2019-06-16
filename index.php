@@ -93,13 +93,13 @@ include_once 'connection.php' ;
         mysqli_query($connection,$sqlPlayer2);
         
         // update view score with db data
-        $connDB=mysqli_select_db($conneciton,'badminton 2019)';
-        sqlview1 ='SELECT score FROM court1Player1';
-        sqlview2 ='SELECT score FROM court1Player2';
-        $result = mysqli_query($conneciton,sqlview1);
+        // $connDB = mysqli_select_db($conneciton,'badminton 2019');
+        // sqlview1 ='SELECT score FROM court1Player1';
+        // sqlview2 ='SELECT score FROM court1Player2';
+        $result = mysqli_query('SELECT score FROM court1Player1');
         while($row=mysqli_fetch_array($result))
         {
-          echo $row['score']
+          echo $row['score'];
         }
         mysqli_close($connection);
       }
