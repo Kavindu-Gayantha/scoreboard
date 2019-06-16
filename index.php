@@ -45,7 +45,7 @@ include_once 'connection.php' ;
       <p>
       <fieldset>
       <legend>court1 :</legend>
-      
+      <!-- form starts -->
      
       <form class="form-inline" action="index.php" method="post">
           <div class="form-group mb-2">
@@ -54,7 +54,7 @@ include_once 'connection.php' ;
           </div>
           <div class="form-group mx-sm-3 mb-2">
             <label for="inputPlayer1name" class="sr-only"></label>
-            <input type="text" class="form-control" id="player1_name" placeholder="Player 1 " name="player1_name">
+            <input type="text" class="form-control" id="player1_name" placeholder="Player 1 " name="player1_name"> <!-- input box 1 name-->
           </div>
           <div class="form-group mb-2">
             <label for="player1" class="sr-only">Player 2 : </label>
@@ -62,7 +62,7 @@ include_once 'connection.php' ;
           </div>
           <div class="form-group mx-sm-3 mb-2">
             <label  class="sr-only"></label>
-            <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 ">
+            <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 " name="player2_name">  <!-- input box 2 name-->
           </div>
           <div style="float:center;">
           <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" >Confirm identity</button>
@@ -74,7 +74,14 @@ include_once 'connection.php' ;
       <?php
       if(isset($_POST['confirmPlayers']))
       {
-        $sql = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
+        $sqlPlayer1 = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
+        $sqlPlayer2 = "INSERT INTO court1Player2(player2name) VALUES ('".$_POST["player2_name"]."')";
+        $player1name=$_POST['player1_name'];
+        $player2name=$_POST['player2_name'];
+        mysqli_query($connection,$sqlPlayer1);
+        mysqli_query($connection,$sqlPlayer2);
+        
+        mysqli_close($connection);
       }
       ?>
       </fieldset>
