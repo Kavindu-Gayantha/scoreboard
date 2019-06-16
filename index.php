@@ -15,6 +15,17 @@ include_once 'connection.php' ;
     <title>Badminton 2019</title>
     <!-- <link rel="stylesheet" href="css" class="rel">
     <link rel="stylesheet" href="js" class="rel"> -->
+    <style>
+    .btn-success
+    {
+      width:72px;
+    }
+    .col-xs-1
+    {
+      font-weight:bold;
+      color:darkblue;
+    }
+    </style>
   </head>
   <body>
    
@@ -81,20 +92,29 @@ include_once 'connection.php' ;
         mysqli_query($connection,$sqlPlayer1);
         mysqli_query($connection,$sqlPlayer2);
         
+        // update view score with db data
+        $connDB=mysqli_select_db($conneciton,'badminton 2019)';
+        sqlview1 ='SELECT score FROM court1Player1';
+        sqlview2 ='SELECT score FROM court1Player2';
+        $result = mysqli_query($conneciton,sqlview1);
+        while($row=mysqli_fetch_array($result))
+        {
+          echo $row['score']
+        }
         mysqli_close($connection);
       }
       ?>
       </fieldset>
       <!-- </p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
-      <hr class="my-4"> 
+      <hr class="my-4">  <!--horizontal line -->
       <!-- view scores  -->
        
       <div class="row justify-content-md-center">
         <div class="col col-lg-2">
           <div class="col-xs-1">
-                <label for="ex1">Player 1 scores</label>
-                <input class="form-control" id="ex2" type="text" readonly>
+                <label for="ex1">Player 1 scores :</label>
+                <input class="form-control" id="ex1" type="text" readonly>
           </div>
         </div>
         <!-- <div class="col-md-auto">
@@ -102,28 +122,31 @@ include_once 'connection.php' ;
         </div> -->
         <div class="col col-lg-2">
               <div class="col-xs-1">
-                <label for="ex1">Player 2 scores</label>
+                <label for="ex1">Player 2 scores :</label>
                 <input class="form-control" id="ex2" type="text" readonly>
               </div>
         </div>
       </div><!--  score ends -->
-
-      <div class="row justify-content-md-center">
+      <p>
+      <div class="row justify-content-md-center"> <!-- + and - buttons for changing scores-->
+      
         <div class="col col-lg-2">
-          <div class="col-xs-1">
-                <label for="ex1">Player 1 scores</label>
-                <input class="form-control" id="ex2" type="text" readonly>
+          <div class="col-xs-1"> 
+          <!-- should include buttons + and - -->
+               
+          <button type="button" class="btn btn-success"><strong> + </strong></button>
+          <button type="button" class="btn btn-success"><strong> - </strong>  </button>
           </div>
         </div>
-        <!-- <div class="col-md-auto">
-          Variable width content
-        </div> -->
+        
         <div class="col col-lg-2">
               <div class="col-xs-1">
-                <label for="ex1">Player 2 scores</label>
-                <input class="form-control" id="ex2" type="text" readonly>
+              <button type="button" class="btn btn-success"><strong> + </strong></button>
+              <button type="button" class="btn btn-success"><strong> - </strong></button>
               </div>
         </div>
+
+
       </div>
   
      
