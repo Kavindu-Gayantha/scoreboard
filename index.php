@@ -61,7 +61,7 @@ include_once 'connection.php' ;
       <form class="form-inline" action="index.php" method="post">
           <div class="form-group mb-2">
             <label for="player1" class="sr-only">Player 1 : </label>
-            <input type="text" readonly class="form-control-plaintext" id="player1" value="Player 1 :" style="color:green; font-weight:bold; ">
+            <input type="text" readonly class="form-control-plaintext" id="player1" value="Player 1 :" style="color:green; font-weight:bold; " >
           </div>
           <div class="form-group mx-sm-3 mb-2">
             <label for="inputPlayer1name" class="sr-only"></label>
@@ -85,23 +85,25 @@ include_once 'connection.php' ;
       <?php
       if(isset($_POST['confirmPlayers']))
       {
-        $sqlPlayer1 = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
-        $sqlPlayer2 = "INSERT INTO court1Player2(player2name) VALUES ('".$_POST["player2_name"]."')";
-        $player1name=$_POST['player1_name'];
-        $player2name=$_POST['player2_name'];
-        mysqli_query($connection,$sqlPlayer1);
-        mysqli_query($connection,$sqlPlayer2);
-        
-        // update view score with db data
-        // $connDB = mysqli_select_db($conneciton,'badminton 2019');
-        // sqlview1 ='SELECT score FROM court1Player1';
-        // sqlview2 ='SELECT score FROM court1Player2';
-        $result = mysqli_query('SELECT score FROM court1Player1');
-        while($row=mysqli_fetch_array($result))
-        {
-          echo $row['score'];
+        if(isset($_POST['player1_name']) && isset($_POST['player2_name'])){
+          $sqlPlayer1 = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
+          $sqlPlayer2 = "INSERT INTO court1Player2(player2name) VALUES ('".$_POST["player2_name"]."')";
+          $player1name=$_POST['player1_name'];
+          $player2name=$_POST['player2_name'];
+          mysqli_query($connection,$sqlPlayer1);
+          mysqli_query($connection,$sqlPlayer2);
+          
+          // update view score with db data
+          // $connDB = mysqli_select_db($conneciton,'badminton 2019');
+          // sqlview1 ='SELECT score FROM court1Player1';
+          // sqlview2 ='SELECT score FROM court1Player2';
+          $result = mysqli_query($connection,'SELECT score FROM court1Player1');
+          while($row=mysqli_fetch_array($result))
+          {
+            echo $row['score'];
+          }
+          mysqli_close($connection);
         }
-        mysqli_close($connection);
       }
       ?>
       </fieldset>
