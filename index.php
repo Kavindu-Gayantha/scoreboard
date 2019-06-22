@@ -133,6 +133,7 @@ include_once 'connection.php' ;
         </div>
       </div><!--  score ends -->
       <p>
+          <p>
       <div class="row justify-content-md-center"> <!-- + and - buttons for changing scores-->
       
         <div class="col col-lg-2">
