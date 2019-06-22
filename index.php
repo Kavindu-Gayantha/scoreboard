@@ -74,9 +74,9 @@ include_once 'connection.php' ;
           <div class="form-group mx-sm-3 mb-2">
             <label  class="sr-only"></label>
             <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 " name="player2_name">  <!-- input box 2 name-->
-          </div>
-          <div style="float:center;">
-          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" >Confirm identity</button>
+          </div><p>
+          <div style="float:center; padding-left:45%;">
+          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" >start match</button>
           </div>
         
           
