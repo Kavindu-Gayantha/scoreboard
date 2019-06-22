@@ -172,18 +172,20 @@ include_once 'connection.php' ;
  </script>
 
  <!-- won by -->
- <div class="alert alert-dark" role="alert">
-  
-    <div class="container" style="padding-left:35%;">
-        <div class="form-group" style="color:blue; font-weight:bold;">
-          <label for="winnername" >won by :</label>
-          <input type="text" class="form-control" id="winner" style="width:300px;">
+ <form action="index.php" method="POST">
+    <div class="alert alert-dark" role="alert">
+      
+        <div class="container" style="padding-left:35%;">
+            <div class="form-group" style="color:blue; font-weight:bold;">
+              <label for="winnername" >won by :</label>
+              <input type="text" class="form-control" id="winner" style="width:300px;">
+            </div>
+            <button type="submit" class="btn btn-outline-secondary">confirm</button>
         </div>
-        <button type="button" class="btn btn-outline-secondary">confirm</button>
     </div>
-    
-
-</div>
+ 
+ </form>
+ 
  
   </body>
 
