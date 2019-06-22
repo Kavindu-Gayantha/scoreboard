@@ -145,15 +145,22 @@ include_once 'connection.php' ;
           </div>
         </div>
         
+      <!-- match end -->
+      
         <div class="col col-lg-2">
               <div class="col-xs-1">
               <button type="button" class="btn btn-success" onclick="addingScores()"><strong> + </strong></button>
               <button type="button" class="btn btn-success"><strong> - </strong></button>
               </div>
         </div>
-
+<!-- end match -->
 
       </div>
+      <p>
+        <div style="float:center; padding-left:45%;">
+          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" >end match</button>
+          </div>
+
   
      
     </div><!-- jumbortan ends -->
