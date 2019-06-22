@@ -186,7 +186,7 @@ include_once 'connection.php' ;
         <div class="container" style="padding-left:35%;">
             <div class="form-group" style="color:blue; font-weight:bold;">
               <label for="winnername" >won by :</label>
-              <input type="text" class="form-control" id="winner" style="width:300px;">
+              <input type="text" class="form-control" id="winner" style="width:300px;" readonly>
             </div>
             <button type="submit" class="btn btn-outline-secondary">confirm</button>
         </div>
