@@ -85,7 +85,8 @@ include_once 'connection.php' ;
       <?php
       if(isset($_POST['confirmPlayers']))
       {
-        if(isset($_POST['player1_name']) && isset($_POST['player2_name'])){
+        if(isset($_POST['player1_name']) && isset($_POST['player2_name']))
+        {
           $sqlPlayer1 = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
           $sqlPlayer2 = "INSERT INTO court1Player2(player2name) VALUES ('".$_POST["player2_name"]."')";
           $player1name=$_POST['player1_name'];
@@ -116,7 +117,8 @@ include_once 'connection.php' ;
         <div class="col col-lg-2">
           <div class="col-xs-1">
                 <label for="ex1">Player 1 scores :</label>
-                <input class="form-control" id="ex1" type="text" readonly>
+                <label for="score1" id="player1score">00</label>
+                <!-- <input class="form-control" id="ex1" type="text" readonly> -->
           </div>
         </div>
         <!-- <div class="col-md-auto">
@@ -125,7 +127,8 @@ include_once 'connection.php' ;
         <div class="col col-lg-2">
               <div class="col-xs-1">
                 <label for="ex1">Player 2 scores :</label>
-                <input class="form-control" id="ex2" type="text" readonly>
+                <label for="score2" id="player2score">00</label>
+                <!-- <input class="form-control" id="ex2" type="text" readonly> -->
               </div>
         </div>
       </div><!--  score ends -->
@@ -136,14 +139,14 @@ include_once 'connection.php' ;
           <div class="col-xs-1"> 
           <!-- should include buttons + and - -->
                
-          <button type="button" class="btn btn-success"><strong> + </strong></button>
-          <button type="button" class="btn btn-success"><strong> - </strong>  </button>
+          <button type="button" class="btn btn-success" onclick="addingScores()"><strong> + </strong></button>
+          <button type="button" class="btn btn-success"><strong> - </strong></button>
           </div>
         </div>
         
         <div class="col col-lg-2">
               <div class="col-xs-1">
-              <button type="button" class="btn btn-success"><strong> + </strong></button>
+              <button type="button" class="btn btn-success" onclick="addingScores()"><strong> + </strong></button>
               <button type="button" class="btn btn-success"><strong> - </strong></button>
               </div>
         </div>
@@ -153,12 +156,35 @@ include_once 'connection.php' ;
   
      
     </div><!-- jumbortan ends -->
-
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script type="script/text">
+      function addingScores()
+      { 
+        var scores=document.getElementById("player1score").innerHTML;
+        document.getElementById("player1score").innerHTML=scores+1;
+      }
+ 
+ </script>
+
+ <!-- won by -->
+ <div class="alert alert-dark" role="alert">
+  
+    <div class="container" style="padding-left:35%;">
+        <div class="form-group" style="color:blue; font-weight:bold;">
+          <label for="winnername" >won by :</label>
+          <input type="text" class="form-control" id="winner" style="width:300px;">
+        </div>
+        <button type="button" class="btn btn-outline-secondary">confirm</button>
+    </div>
+    
+
+</div>
+ 
   </body>
 
  
