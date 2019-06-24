@@ -76,7 +76,7 @@ include_once 'connection.php' ;
             <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 " name="player2_name">  <!-- input box 2 name-->
           </div><p>
           <div style="float:center; padding-left:45%;">
-          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" >start match</button>
+          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers"  onclick="display_view_score();">start match</button>
           </div>
         
           
@@ -111,9 +111,10 @@ include_once 'connection.php' ;
       <!-- </p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
       <hr class="my-4">  <!--horizontal line -->
-      <!-- view scores  -->
+
+      <!-- view scores\\  match starting section -->
        
-      <div class="row justify-content-md-center">
+      <div class="row justify-content-md-center" id="viewScores" style="display:none;">
         <div class="col col-lg-2">
           <div class="col-xs-1">
                 <label for="ex1">Player 1 scores :</label>
@@ -131,6 +132,7 @@ include_once 'connection.php' ;
                 <!-- <input class="form-control" id="ex2" type="text" readonly> -->
               </div>
         </div>
+
       </div><!--  score ends -->
       <p>
           <p>
@@ -175,6 +177,12 @@ include_once 'connection.php' ;
       { 
         var scores=document.getElementById("player1score").innerHTML;
         document.getElementById("player1score").innerHTML=scores+1;
+      }
+
+      function display_view_score()
+      {
+       
+        document.getElementById("viewScores").style.display = "block";
       }
  
  </script>
