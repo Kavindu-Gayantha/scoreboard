@@ -152,7 +152,7 @@ include_once 'connection.php' ;
       
         <div class="col col-lg-2">
               <div class="col-xs-1">
-              <button type="button" class="btn btn-success" onclick="addingScore2s();" ><strong> + </strong></button>
+              <button type="button" class="btn btn-success" onclick="addingScores2();" ><strong> + </strong></button>
               <button type="button" class="btn btn-success"><strong> - </strong></button>
               </div>
         </div>
