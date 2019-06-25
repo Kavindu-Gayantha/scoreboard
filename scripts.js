@@ -1,7 +1,7 @@
 function addingScores1()
 { 
   var scores=document.getElementById("player1score").innerHTML;
-  scores = scores + 1;
+  scores = parseInt(scores,10)+ 1;  //string to integer conversion
   document.getElementById("player1score").innerHTML=scores;
 }
 
