@@ -4,7 +4,18 @@ function addingScores1()
   scores1 = parseInt(scores1,10)+ 1;  //string to integer conversion
   document.getElementById("player1score").innerHTML=scores1;
 }
-
+function subScores1()
+{
+    var scores1 = document.getElementById("player1score").innerHTML;
+    scores1 = parseInt(scores1,10)-1; //string to integer conversion
+    document.getElementById("player1score").innerHTML = scores1; // validation should be added if minus scores may display
+}
+function subScores2()
+{
+    var scores2 = document.getElementById("player2score").innerHTML;
+    scores2 = parseInt(scores2,10) - 1; //string to integer conversion
+    document.getElementById("player2score").innerHTML = scores2;
+}
 function display_view_score()
 {
     document.getElementById("viewScores").style.display = "block";
@@ -15,4 +26,25 @@ function addingScores2()
     var scores2=document.getElementById("player2score").innerHTML;
     scores2 = parseInt(scores2,10)+ 1;  //string to integer conversion
     document.getElementById("player2score").innerHTML=scores2;
+}
+function scoresValidation(scores1,scores2)
+{
+    if(scores1>20 || scores2>20) //21-19 like
+    {
+        if(Math.abs(scores1-scores2)==2)
+        {
+            document.getElementById("viewScores").style.display ="none"; // to stop counting further
+
+            if(scores1>scores2) // checking who wons
+            {
+                document.getElementById("winner").innerHTML="player 1 won";
+            }
+            else
+            {
+                document.getElementById("winner").innerHTML ="player 2 won";
+            }
+            
+        }
+    }
+
 }
