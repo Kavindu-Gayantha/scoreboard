@@ -84,29 +84,29 @@ include_once 'connection.php' ;
       </form>
           
       <?php
-      // if(isset($_POST['confirmPlayers']))
-      // {
-      //   if(isset($_POST['player1_name']) && isset($_POST['player2_name']))
-      //   {
-      //     $sqlPlayer1 = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
-      //     $sqlPlayer2 = "INSERT INTO court1Player2(player2name) VALUES ('".$_POST["player2_name"]."')";
-      //     $player1name=$_POST['player1_name'];
-      //     $player2name=$_POST['player2_name'];
-      //     mysqli_query($connection,$sqlPlayer1);
-      //     mysqli_query($connection,$sqlPlayer2);
+      if(isset($_POST['confirmPlayers']))
+      {
+        if(isset($_POST['player1_name']) && isset($_POST['player2_name']))
+        {
+          $sqlPlayer1 = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
+          $sqlPlayer2 = "INSERT INTO court1Player2(player2name) VALUES ('".$_POST["player2_name"]."')";
+          $player1name=$_POST['player1_name'];
+          $player2name=$_POST['player2_name'];
+          mysqli_query($connection,$sqlPlayer1);
+          mysqli_query($connection,$sqlPlayer2);
           
           // update view score with db data
-          // $connDB = mysqli_select_db($conneciton,'badminton 2019');
+          // $connDB = mysqli_select_db($conneciton,'badminton scoreboard');
           // sqlview1 ='SELECT score FROM court1Player1';
           // sqlview2 ='SELECT score FROM court1Player2';
-      //     $result = mysqli_query($connection,'SELECT score FROM court1Player1');
-      //     while($row=mysqli_fetch_array($result))
-      //     {
-      //       echo $row['score'];
-      //     }
-      //     mysqli_close($connection);
-      //   }
-      // }
+          // $result = mysqli_query($connection,'SELECT score FROM court1Player1');
+          // while($row=mysqli_fetch_array($result))
+          // {
+          //   echo $row['score'];
+          // }
+          mysqli_close($connection);
+        }
+      }
       ?>
       </fieldset>
       <!-- </p>
@@ -139,7 +139,7 @@ include_once 'connection.php' ;
           <p>
       <div class="row justify-content-md-center"> <!-- + and - buttons for changing scores-->
       
-        <div class="col col-lg-2">
+        <div class="col col-lg-2" id="buttons1set">
           <div class="col-xs-1"> 
           <!-- should include buttons + and - -->
                
@@ -150,7 +150,7 @@ include_once 'connection.php' ;
         
       <!-- match end -->
       
-        <div class="col col-lg-2">
+        <div class="col col-lg-2" id="buttons2set">
               <div class="col-xs-1">
               <button type="button" class="btn btn-success" onclick="addingScores2();" ><strong> + </strong></button>
               <button type="button" class="btn btn-success" onclick ="subScores2();"><strong> - </strong></button>
@@ -163,7 +163,7 @@ include_once 'connection.php' ;
       
       <p>
         <div style="float:center; padding-left:45%;">
-          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" >end match</button>
+          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" onclick="winner();">end match</button>
           </div>
 
   

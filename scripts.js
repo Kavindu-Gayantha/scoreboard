@@ -48,3 +48,27 @@ function scoresValidation(scores1,scores2)
     }
 
 }
+//selecting who won
+function winner()
+{
+    var player1 = document.getElementById("player1score").innerHTML;
+    var player2 = document.getElementById("player2score").innerHTML;
+    if(player1> player2 && player1>20 && Math.abs(player1-player2)==2)
+    {
+        document.getElementById("winner").innerTextL=player1;
+        document.getElementById("buttons2set").style.display ="none";
+        document.getElementById("buttons1set").style.display ="none";
+    }
+    else if(player2 >player1 && player1>20 && Math.abs(player1-player2)==2)
+    {
+        document.getElementById("winner").innerText = player2;
+        document.getElementById("buttons2set").style.display ="none";
+        document.getElementById("buttons1set").style.display ="none";
+    }
+    else
+    {
+        document.getElementById("winner").innerHTML ="check for errors";
+    }
+}
+
+
