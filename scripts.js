@@ -18,7 +18,7 @@ function subScores2()
 }
 function display_view_score()
 {
-    document.getElementById("viewScores").style.display = "block";
+    document.getElementById("viewScores").style.display = "block";  //starting the match
 }
 
 function addingScores2()
@@ -27,7 +27,7 @@ function addingScores2()
     scores2 = parseInt(scores2,10)+ 1;  //string to integer conversion
     document.getElementById("player2score").innerHTML=scores2;
 }
-function scoresValidation(scores1,scores2)
+function scoresValidation()
 {
     if(scores1>20 || scores2>20) //21-19 like
     {
@@ -38,6 +38,7 @@ function scoresValidation(scores1,scores2)
             if(scores1>scores2) // checking who wons
             {
                 document.getElementById("winner").innerHTML="player 1 won";
+                console.log("player 1 won");
             }
             else
             {

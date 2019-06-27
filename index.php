@@ -143,7 +143,7 @@ include_once 'connection.php' ;
           <div class="col-xs-1"> 
           <!-- should include buttons + and - -->
                
-          <button type="button" class="btn btn-success" onclick="addingScores1();"><strong> + </strong></button>
+          <button type="button" class="btn btn-success" onclick="addingScores1(); scoresValidation();"><strong> + </strong></button>
           <button type="button" class="btn btn-success" onclick="subScores1();"><strong> - </strong></button>
           </div>
         </div>
