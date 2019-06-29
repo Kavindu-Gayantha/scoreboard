@@ -200,3 +200,4 @@ include_once 'connection.php' ;
 
  
 </html>
+<?php mysqli_close($conneciton); ?>
