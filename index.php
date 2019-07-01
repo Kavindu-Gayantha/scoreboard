@@ -77,7 +77,7 @@ include_once 'connection.php' ;
             <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 " name="player2_name">  <!-- input box 2 name-->
           </div><p>
           <div style="float:center; padding-left:45%;">
-          <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers"  >start match</button>
+          <button type="submit" class="btn btn-primary mb-2" name="Players"  >start match</button>
           </div>
         
           
@@ -86,10 +86,10 @@ include_once 'connection.php' ;
       <?php
       if(isset($_POST['confirmPlayers']))
       {
-        if(isset($_POST['player1_name']) && isset($_POST['player2_name']))
+        if(isset($_POST['player1_name']) && isset($_POST['player2_name']) && isset($_POST[player1scores]) && isset($_POST[player2scores]))
         {
-          $sqlPlayer1 = "INSERT INTO court1Player1(player1name) VALUES ('".$_POST["player1_name"]."')";
-          $sqlPlayer2 = "INSERT INTO court1Player2(player2name) VALUES ('".$_POST["player2_name"]."')";
+          $sqlPlayer1 = "INSERT INTO matchs(player1_first_name) VALUES ('".$_POST["player1_name"]."')";
+          $sqlPlayer2 = "INSERT INTO matchs(player2_first_name) VALUES ('".$_POST["player2_name"]."')";
           $player1name=$_POST['player1_name'];
           $player2name=$_POST['player2_name'];
           mysqli_query($connection,$sqlPlayer1);
@@ -119,7 +119,7 @@ include_once 'connection.php' ;
         <div class="col col-lg-2">
           <div class="col-xs-1">
                 <label for="ex1">Player 1 scores :</label>
-                <label for="score1" id="player1score">00</label>
+                <label for="score1" id="player1score" name="player1scores">00</label>
                 <!-- <input class="form-control" id="ex1" type="text" readonly> -->
           </div>
         </div>
@@ -129,7 +129,7 @@ include_once 'connection.php' ;
         <div class="col col-lg-2">
               <div class="col-xs-1">
                 <label for="ex1">Player 2 scores :</label>
-                <label for="score2" id="player2score">00</label>
+                <label for="score2" id="player2score" name="player2scores">00</label>
                 <!-- <input class="form-control" id="ex2" type="text" readonly> -->
               </div>
         </div>
@@ -200,4 +200,4 @@ include_once 'connection.php' ;
 
  
 </html>
-<?php mysqli_close($conneciton); ?>
+<?php mysqli_close($connection); ?>
