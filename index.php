@@ -86,12 +86,13 @@ include_once 'connection.php' ;
       <?php
       if(isset($_POST['confirmPlayers']))
       {
-        if(isset($_POST['player1_name']) && isset($_POST['player2_name']) && isset($_POST[player1scores]) && isset($_POST[player2scores]))
+        if(isset($_POST['player1_name']) && isset($_POST['player2_name']) && isset($_POST['player1scores']) && isset($_POST['player2scores']))
         {
-          $sqlPlayer1 = "INSERT INTO matchs(player1_first_name) VALUES ('".$_POST["player1_name"]."')";
-          $sqlPlayer2 = "INSERT INTO matchs(player2_first_name) VALUES ('".$_POST["player2_name"]."')";
           $player1name=$_POST['player1_name'];
           $player2name=$_POST['player2_name'];
+          $sqlPlayer1 = "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ($player1name,$player2name)";
+          // $sqlPlayer2 = "INSERT INTO matchs(player2_first_name) VALUES ('".$_POST["player2_name"]."')";
+          
           mysqli_query($connection,$sqlPlayer1);
           mysqli_query($connection,$sqlPlayer2);
           
