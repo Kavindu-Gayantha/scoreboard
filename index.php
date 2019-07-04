@@ -90,7 +90,7 @@ include_once 'connection.php' ;
         {
           $player1name=$_POST['player1_name'];
           $player2name=$_POST['player2_name'];
-          $sqlPlayer1 = "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ($player1name,$player2name)";
+          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ($player1name,$player2name)";
           // $sqlPlayer2 = "INSERT INTO matchs(player2_first_name) VALUES ('".$_POST["player2_name"]."')";
           
           mysqli_query($connection,$sqlPlayer1);
