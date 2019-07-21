@@ -84,17 +84,22 @@ include_once 'connection.php' ;
       </form>
           
       <?php
-      if(isset($_POST['confirmPlayers']))
+      if(isset($_POST['Players']))
       {
-        if(isset($_POST['player1_name']) && isset($_POST['player2_name']) && isset($_POST['player1scores']) && isset($_POST['player2scores']))
-        {
+        // if(isset($_POST['player1_name']) && isset($_POST['player2_name']) && isset($_POST['player1scores']) && isset($_POST['player2scores']))
+        // {
           $player1name=$_POST['player1_name'];
           $player2name=$_POST['player2_name'];
-          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ($player1name,$player2name)";
+          
+          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ('$player1name','$player2name')";
           // $sqlPlayer2 = "INSERT INTO matchs(player2_first_name) VALUES ('".$_POST["player2_name"]."')";
           
-          mysqli_query($connection,$sqlPlayer1);
-          mysqli_query($connection,$sqlPlayer2);
+          $result=mysqli_query($connection,$sql);
+          if($result)
+          {
+            echo "names are added , match starts now !";
+          }
+          // mysqli_query($connection,$sqlPlayer2);
           
           // update view score with db data
           // $connDB = mysqli_select_db($conneciton,'badminton scoreboard');
@@ -105,8 +110,8 @@ include_once 'connection.php' ;
           // {
           //   echo $row['score'];
           // }
-          mysqli_close($connection);
-        }
+          
+        // }
       }
       ?>
       </fieldset>
@@ -188,14 +193,25 @@ include_once 'connection.php' ;
         <div class="container" style="padding-left:35%;">
             <div class="form-group" style="color:blue; font-weight:bold;">
               <label for="winnername" >won by :</label>
-              <input type="text" class="form-control" id="winner" style="width:300px;" readonly>
+              <input type="text" class="form-control" id="winner" style="width:300px;" name ="winnerOutput" readonly>
             </div>
-            <button type="submit" class="btn btn-outline-secondary">confirm</button>
+            <button type="submit" class="btn btn-outline-secondary" name="confirm">confirm</button>
         </div>
     </div>
  
  </form>
- 
+ <?php
+  if(isset($_POST['confirm']))
+  {
+    $winner =$_POST['winnerOutput'];
+    $sql_update="INSERT INTO matchs(wonBy) VALUES('$winner')";
+    $winning_result =sqli_query($conneciton,$sql_update);
+    if($winning_result)
+    {
+      echo "updated database winner";
+    }
+  }
+ ?>
  
   </body>
 
