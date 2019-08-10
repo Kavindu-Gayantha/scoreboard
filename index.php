@@ -139,6 +139,41 @@ include_once 'connection.php' ;
                 <!-- <input class="form-control" id="ex2" type="text" readonly> -->
               </div>
         </div>
+        <!-- getting js variable into a php variable and send that value to the database -->
+        <?php
+          $player1finalScore = 
+          "<script>
+            document.getElementById('player1score').innerHTML;
+          </script>
+          
+          ";
+          $player2finalScore = 
+          "
+            <script>
+            document.getElementById('player2score').innerHTML;
+          ";
+          $player1name=$_POST['player1_name'];
+          $player2name=$_POST['player2_name'];
+          
+          //now player1finalScore variable and player2finalScore variable are to send to the database 
+          if(isset($_POST['confirmPlayers']))
+          {
+            if($player1finalScore>$player2finalScore)
+            {
+              $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player1name')";
+              echo "player 1 won";
+            }
+            else
+            {
+              $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player2name')";
+              echo "player 2 won";
+            }
+            //$dbUpdateFinalScoreQuery = "INSERT INTO "
+          }
+          //if is end
+        
+
+        ?>
 
       </div><!--  score ends -->
       <p>
@@ -169,8 +204,10 @@ include_once 'connection.php' ;
       
       <p>
         <div style="float:center; padding-left:45%;">
+        <form action="#" method="POST">
+        
           <button type="submit" class="btn btn-primary mb-2" name="confirmPlayers" onclick="winner();">end match</button>
-          </div>
+          </form></div>
 
   
      

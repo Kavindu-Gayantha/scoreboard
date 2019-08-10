@@ -29,7 +29,8 @@ function addingScores2()
 }
 function scoresValidation()
 {
-    if(scores1>20 || scores2>20) //21-19 like
+    var scores1,scores2;
+    if(scores1 >20 || scores2>20) //21-19 like
     {
         if(Math.abs(scores1-scores2)==2)
         {
