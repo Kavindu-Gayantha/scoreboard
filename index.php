@@ -84,6 +84,8 @@ include_once 'connection.php' ;
       </form>
           
       <?php
+      $player1name="";
+      $player2name="";
       if(isset($_POST['Players']))
       {
         // if(isset($_POST['player1_name']) && isset($_POST['player2_name']) && isset($_POST['player1scores']) && isset($_POST['player2scores']))
@@ -144,16 +146,15 @@ include_once 'connection.php' ;
           $player1finalScore = 
           "<script>
             document.getElementById('player1score').innerHTML;
-          </script>
-          
-          ";
+          </script>";
+          echo ;
           $player2finalScore = 
           "
             <script>
             document.getElementById('player2score').innerHTML;
           ";
-          $player1name=$_POST['player1_name'];
-          $player2name=$_POST['player2_name'];
+          // $player1name=$_POST['player1_name'];
+          // $player2name=$_POST['player2_name'];
           
           //now player1finalScore variable and player2finalScore variable are to send to the database 
           if(isset($_POST['confirmPlayers']))
@@ -183,11 +184,13 @@ include_once 'connection.php' ;
         <div class="col col-lg-2" id="buttons1set">
           <div class="col-xs-1"> 
           <!-- should include buttons + and - -->
-               
-          <button type="button" class="btn btn-success" onclick="addingScores1(); scoresValidation();"><strong> + </strong></button>
-          <button type="button" class="btn btn-success" onclick="subScores1();"><strong> - </strong></button>
+          <form action="#" method="post">
+            <button name="playerOnePlus" type="button" class="btn btn-success" onclick="addingScores1(); scoresValidation();"><strong> + </strong></button>
+            <button name="playerTwoPlus" type="button" class="btn btn-success" onclick="subScores1();"><strong> - </strong></button>
+          </form>
           </div>
         </div>
+
         
       <!-- match end -->
       
