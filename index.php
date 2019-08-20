@@ -142,16 +142,26 @@ include_once 'connection.php' ;
               </div>
         </div>
         <!-- getting js variable into a php variable and send that value to the database -->
-        <script>
+        <!-- <script>
           function getValue(){
               var value = document.getElementById('player1score').innerHTML;
             }
-        </script>
+        </script> -->
         <?php
-          $player1finalScore = value;
+        function setValueIntoPHPvariable()
+        {
+          $player1finalScore = "<script>
+          function getValue(){
+              var value = document.getElementById('player1score').innerHTML;
+            }
+        </script>";
+
+          echo $player1finalScore;
+        }
+         
            
           
-          echo $player1finalScore;
+         
           //$player2finalScore = 
           "
             <script>
