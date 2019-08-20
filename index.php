@@ -142,17 +142,21 @@ include_once 'connection.php' ;
               </div>
         </div>
         <!-- getting js variable into a php variable and send that value to the database -->
+        <script>
+          function getValue(){
+              var value = document.getElementById('player1score').innerHTML;
+            }
+        </script>
         <?php
-          $player1finalScore = 
-          "<script>
-            document.getElementById('player1score').innerHTML;
-          </script>";
-          echo ;
-          $player2finalScore = 
+          $player1finalScore = value;
+           
+          
+          echo $player1finalScore;
+          //$player2finalScore = 
           "
             <script>
             document.getElementById('player2score').innerHTML;
-          ";
+          "
           // $player1name=$_POST['player1_name'];
           // $player2name=$_POST['player2_name'];
           
@@ -172,7 +176,6 @@ include_once 'connection.php' ;
             //$dbUpdateFinalScoreQuery = "INSERT INTO "
           }
           //if is end
-        
 
         ?>
 
@@ -182,7 +185,7 @@ include_once 'connection.php' ;
       <div class="row justify-content-md-center"> <!-- + and - buttons for changing scores-->
       
         <div class="col col-lg-2" id="buttons1set">
-          <div class="col-xs-1"> 
+          <div class="col-xs-1">
           <!-- should include buttons + and - -->
           <form action="#" method="post">
             <button name="playerOnePlus" type="button" class="btn btn-success" onclick="addingScores1(); scoresValidation();"><strong> + </strong></button>
