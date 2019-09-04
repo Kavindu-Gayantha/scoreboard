@@ -173,16 +173,16 @@ include_once 'connection.php' ;
           //now player1finalScore variable and player2finalScore variable are to send to the database 
           //if(isset($_POST['confirmPlayers']))
           // {
-            // if($player1finalScore>$player2finalScore)
-            // {
-            //   $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player1name')";
-            //   echo "player 1 won";
-            // }
-            // else
-            // {
-            //   $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player2name')";
-            //   echo "player 2 won";
-            // }
+            if($player1finalScore>$player2finalScore)
+            {
+              $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player1name')";
+              echo "player 1 won";
+            }
+            else
+            {
+              $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player2name')";
+              echo "player 2 won";
+            }
             //$dbUpdateFinalScoreQuery = "INSERT INTO "
           // }
           //if is end
