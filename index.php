@@ -51,8 +51,8 @@ include_once 'connection.php' ;
     <div class="container">
     <p>
     <div class="jumbotron">
-      <h1 class="display-4" style="text-align:center; font-weight:bold; color:darkblue;">Players</h1>
-      <p class="lead" style="text-align:center;">Team selection tournament 2019.</p>
+      <h1 class="display-4" style="text-align:center; font-weight:bold; color:darkblue;">BADMINTON</h1>
+      <p class="lead" style="text-align:center;">Team selection tournament 2019</p>
       <hr class="my-4">
       <p>
       <fieldset>
@@ -147,47 +147,7 @@ include_once 'connection.php' ;
               var value = document.getElementById('player1score').innerHTML;
             }
         </script> -->
-        <?php
-        function setValueIntoPHPvariable()
-        {
-          $player1finalScore = "<script>
-          function getValue(){
-              var value = document.getElementById('player1score').innerHTML;
-            }
-        </script>";
-
-          echo $player1finalScore;
-        }
-         
-           
-          
-         
-          //$player2finalScore = 
-          // "
-          //   <script>
-          //   document.getElementById('player2score').innerHTML;
-          // "
-          // $player1name=$_POST['player1_name'];
-          // $player2name=$_POST['player2_name'];
-          
-          //now player1finalScore variable and player2finalScore variable are to send to the database 
-          //if(isset($_POST['confirmPlayers']))
-          // {
-            // if($player1finalScore>$player2finalScore)
-            // {
-            //   $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player1name')";
-            //   echo "player 1 won";
-            // }
-            // else
-            // {
-            //   $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player2name')";
-            //   echo "player 2 won";
-            // }
-            //$dbUpdateFinalScoreQuery = "INSERT INTO "
-          // }
-          //if is end
-
-        ?>
+      
 
       </div><!--  score ends -->
       <p>
@@ -228,6 +188,47 @@ include_once 'connection.php' ;
   
      
     </div><!-- jumbortan ends -->
+    <?php
+        function setValueIntoPHPvariable()
+        {
+          $player1finalScore = "<script>
+          function getValue(){
+              var value = document.getElementById('player1score').innerHTML;
+            }
+        </script>";
+
+          echo $player1finalScore;
+        }
+         
+           
+          
+         
+          //$player2finalScore = 
+          // "
+          //   <script>
+          //   document.getElementById('player2score').innerHTML;
+          // "
+          // $player1name=$_POST['player1_name'];
+          // $player2name=$_POST['player2_name'];
+          
+          //now player1finalScore variable and player2finalScore variable are to send to the database 
+          //if(isset($_POST['confirmPlayers']))
+          // {
+            // if($player1finalScore>$player2finalScore)
+            // {
+            //   $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player1name')";
+            //   echo "player 1 won";
+            // }
+            // else
+            // {
+            //   $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player2name')";
+            //   echo "player 2 won";
+            // }
+            //$dbUpdateFinalScoreQuery = "INSERT INTO "
+          // }
+          //if is end
+
+        ?>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
