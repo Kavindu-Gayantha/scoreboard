@@ -99,7 +99,7 @@ include_once 'connection.php' ;
           $result=mysqli_query($connection,$sql);
           if($result)
           {
-            echo "<div style="align:center">names are added , match starts now !</div>";
+            echo "<div style='text-align:center; font-weight:bold;'>names are added , match starts now ! <h3>" . $player1name . "</h3> vs <h3>" . $player2name . "</h3> </div>";
           }
           // mysqli_query($connection,$sqlPlayer2);
           
