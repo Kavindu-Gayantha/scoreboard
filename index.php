@@ -163,10 +163,10 @@ include_once 'connection.php' ;
           
          
           //$player2finalScore = 
-          "
-            <script>
-            document.getElementById('player2score').innerHTML;
-          "
+          // "
+          //   <script>
+          //   document.getElementById('player2score').innerHTML;
+          // "
           // $player1name=$_POST['player1_name'];
           // $player2name=$_POST['player2_name'];
           

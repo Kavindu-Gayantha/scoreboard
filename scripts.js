@@ -61,7 +61,7 @@ function winner()
         document.getElementById("buttons2set").style.display ="none";
         document.getElementById("buttons1set").style.display ="none";
     }
-    else if(player2 >player1 && player1>20 && Math.abs(player1-player2)==2)
+    else if(player2 >player1 && player2>20 && Math.abs(player1-player2)==2)
     {
         document.getElementById("winner").innerText = player2;
         document.getElementById("buttons2set").style.display ="none";
