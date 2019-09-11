@@ -77,8 +77,9 @@ function winner()
 //     var value = document.getElementById('player1score').innerHTML;
 // return value;
 // }
-function visibleScores()
-{
-    document.getElementById().style="display:show";
-}
+// function visibleScores()
+// {
+//     document.getElementById('scoreVisibleArea').style.display="block";
+// }
+
 
