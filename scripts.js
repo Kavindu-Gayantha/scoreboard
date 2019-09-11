@@ -72,5 +72,13 @@ function winner()
         document.getElementById("winner").innerHTML ="check for errors";
     }
 }
-
+// funtion getValue()
+// {
+//     var value = document.getElementById('player1score').innerHTML;
+// return value;
+// }
+function visibleScores()
+{
+    document.getElementById().style="display:show";
+}
 

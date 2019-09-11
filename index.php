@@ -1,5 +1,6 @@
 <?php
 include_once 'connection.php' ;
+session_start();
 ?>
 
 <!doctype html>
@@ -77,7 +78,7 @@ include_once 'connection.php' ;
             <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 " name="player2_name">  <!-- input box 2 name-->
           </div><p>
           <div style="float:center; padding-left:45%;">
-          <button type="submit" class="btn btn-primary mb-2" name="Players"  >start match</button>
+          <button type="submit" class="btn btn-primary mb-2" name="Players" onclick="visibleScore();"  >start match</button>
           </div>
         
           
@@ -86,34 +87,20 @@ include_once 'connection.php' ;
       <?php
       $player1name="";
       $player2name="";
-      if(isset($_POST['Players']))
+      if(isset($_SESSION['Players']))
       {
-        // if(isset($_POST['player1_name']) && isset($_POST['player2_name']) && isset($_POST['player1scores']) && isset($_POST['player2scores']))
-        // {
-          $player1name=$_POST['player1_name'];
-          $player2name=$_POST['player2_name'];
+        
+          $player1name=$_SESSION['player1_name'];
+          $player2name=$_SESSION['player2_name'];
           
-          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ('$player1name','$player2name')";
-          // $sqlPlayer2 = "INSERT INTO matchs(player2_first_name) VALUES ('".$_POST["player2_name"]."')";
-          
+          // $sql= "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ('$player1name','$player2name')";
+         
           $result=mysqli_query($connection,$sql);
           if($result)
           {
             echo "<div style='text-align:center; font-weight:bold;'>names are added , match starts now ! <h3>" . $player1name . "</h3> vs <h3>" . $player2name . "</h3> </div>";
           }
-          // mysqli_query($connection,$sqlPlayer2);
-          
-          // update view score with db data
-          // $connDB = mysqli_select_db($conneciton,'badminton scoreboard');
-          // sqlview1 ='SELECT score FROM court1Player1';
-          // sqlview2 ='SELECT score FROM court1Player2';
-          // $result = mysqli_query($connection,'SELECT score FROM court1Player1');
-          // while($row=mysqli_fetch_array($result))
-          // {
-          //   echo $row['score'];
-          // }
-          
-        // }
+        
       }
       ?>
       </fieldset>
@@ -189,16 +176,16 @@ include_once 'connection.php' ;
      
     </div><!-- jumbortan ends -->
     <?php
-        function setValueIntoPHPvariable()
-        {
-          $player1finalScore = "<script>
-          function getValue(){
-              var value = document.getElementById('player1score').innerHTML;
-            }
-        </script>";
+        // function setValueIntoPHPvariable()
+        // {
+          $player1finalScore = '<script src="scripts.js">getValue();</script>'
+        //   function getValue(){
+        //       var value = document.getElementById('player1score').innerHTML;
+        //     }
+        // </script>";
 
-          echo $player1finalScore;
-        }
+          // echo $player1finalScore;
+        // }
          
            
           
