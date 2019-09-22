@@ -109,7 +109,7 @@ session_start();
           // $player2scores =0; 
 
           
-          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name,player1scores,player2scores) VALUES ('$player1name','$player2name','$player1scores','$player2scores')";
+          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name,player1scores,player2scores) VALUES ('$player1name','$player2name','00','00')";
          
           $result=mysqli_query($connection,$sql);
           if($result)
