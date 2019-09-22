@@ -1,2 +1,2 @@
 # scoreboard
-html | bootstrap | php
+html | css | bootstrap | php
