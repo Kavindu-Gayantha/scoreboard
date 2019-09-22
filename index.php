@@ -96,13 +96,13 @@ session_start();
       <?php
       $player1name="";
       $player2name="";
-      if(isset($_SESSION['Players']))
+      if(isset($_POST['Players']))
       {
         
-          $player1name=$_SESSION['player1_name'];
-          $player2name=$_SESSION['player2_name'];
+          $player1name=$_POST['player1_name'];
+          $player2name=$_POST['player2_name'];
           
-          // $sql= "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ('$player1name','$player2name')";
+          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ('$player1name','$player2name')";
          
           $result=mysqli_query($connection,$sql);
           if($result)
