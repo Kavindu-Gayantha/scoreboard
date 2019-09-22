@@ -105,8 +105,10 @@ session_start();
         
           $player1name=$_POST['player1_name'];
           $player2name=$_POST['player2_name'];
+          $player1scores =0;
+          $player2scores =0; 
           
-          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name) VALUES ('$player1name','$player2name')";
+          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name,player1scores,player2scores) VALUES ('$player1name','$player2name','$player1scores','$player2scores')";
          
           $result=mysqli_query($connection,$sql);
           if($result)
