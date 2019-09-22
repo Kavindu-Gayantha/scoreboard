@@ -6,6 +6,8 @@ session_start();
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Diplomata' rel='stylesheet'>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,6 +32,8 @@ session_start();
     {
       display:none;
     } */
+
+    /* font-family: 'Diplomata';font-size: 22px; */
     </style>
     <script src="scripts.js">
     function visibility()
@@ -107,7 +111,7 @@ session_start();
           $result=mysqli_query($connection,$sql);
           if($result)
           {
-            echo "<div style='text-align:center; font-weight:bold;'>names are added , match starts now ! <h3>" . $player1name . "</h3> vs <h3>" . $player2name . "</h3> </div>";
+            echo "<div style='text-align:center; font-weight:bold; '><div style='font-family:default'>names are added , match starts now !</div> <h3 style='font-family:Diplomata ;font-size: 22px; '>" . $player1name . "</h3> vs <h3 style='font-family:Diplomata ;font-size: 22px; '>" . $player2name . "</h3> </div>";
           }
         
       }
