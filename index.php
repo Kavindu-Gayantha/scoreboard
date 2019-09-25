@@ -1,6 +1,7 @@
 <?php
 include_once 'connection.php' ;
 session_start();
+include_once ('scoresupdate.php');
 ?>
 
 <!doctype html>
@@ -103,12 +104,14 @@ session_start();
       {
         $player1name=$_POST['player1_name'];
         $player2name=$_POST['player2_name'];
+        $player1scores = 0;
+        $player2scores = 0;
          
           // $player1scores =0;
           // $player2scores =0; 
 
           
-          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name,player1scores,player2scores) VALUES ('$player1name','$player2name','00','00')";
+          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name,first_set_player1,first_set_player2) VALUES ('$player1name','$player2name','$player1scores','$player2scores')";
          
           $result=mysqli_query($connection,$sql);
           if($result)
@@ -119,12 +122,12 @@ session_start();
       }
       ?>
       <script>//localstorage
-      var player_one = document.getElementById('player1_name').innerHTML;
-      var player_two = document.getElementById('player2_name').innerHTML;
-      localStorage.setItem("playerone",player_one);
-      localStorage.setItem("playertwo",player_two);
-      localStorage.setItem("playerone_startingScores","0");
-      localStorage.setItem("playertwo_startingScores","0");
+      // var player_one = document.getElementById('player1_name').innerHTML;
+      // var player_two = document.getElementById('player2_name').innerHTML;
+      // localStorage.setItem("playerone",player_one);
+      // localStorage.setItem("playertwo",player_two);
+      // localStorage.setItem("playerone_startingScores","0");
+      // localStorage.setItem("playertwo_startingScores","0");
       </script>
       </fieldset>
       <!-- </p>
