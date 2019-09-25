@@ -133,13 +133,15 @@ session_start();
 
       <!-- view scores\\  match starting section -->
     <div id="scoreVisibleArea">
-      
+    <?php
+        require_once('scoresupdate.php');
+    ?>
       
       <div class="row justify-content-md-center" id="viewScores">
         <div class="col col-lg-2">
           <div class="col-xs-1">
                 <label for="ex1">Player 1 scores :</label>
-                <label for="score1" id="player1score" name="player1scores">00</label>
+                <label for="score1" id="player1score" name="player1scores"><?php echo $results['first_set_player1']; ?></label>
                 <!-- <input class="form-control" id="ex1" type="text" readonly> -->
           </div>
         </div>
@@ -166,7 +168,7 @@ session_start();
       <p>
           <p>
       <div class="row justify-content-md-center"> <!-- + and - buttons for changing scores-->
-      
+  
         <div class="col col-lg-2" id="buttons1set">
           <div class="col-xs-1">
           <!-- should include buttons + and - -->
@@ -188,6 +190,7 @@ session_start();
               </form>
               </div>
         </div>
+        
         
 <!-- end match -->
 
