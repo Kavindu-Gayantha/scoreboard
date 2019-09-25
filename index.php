@@ -73,7 +73,7 @@ session_start();
       <legend>court1 :</legend>
       <!-- form starts -->
      
-      <form class="form-inline" action="index.php" method="post">
+      <form class="form-inline" action="index.php" method="POST">
           <div class="form-group mb-2">
             <label for="player1" class="sr-only">Player 1 : </label>
             <input type="text" readonly class="form-control-plaintext" id="player1" value="Player 1 :" style="color:green; font-weight:bold; " >
@@ -91,20 +91,19 @@ session_start();
             <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 " name="player2_name">  <!-- input box 2 name-->
           </div><p>
           <div style="float:center; padding-left:45%;">
-          <button type="submit" class="btn btn-primary mb-2" name="Players" onclick="document.getElementById('scoreVisibleArea').style.display='block'">start match</button>
+          <button type="submit" class="btn btn-primary mb-2" name="Players_submit" onclick="document.getElementById('scoreVisibleArea').style.display='block'">start match</button>
           </div>
         
           
       </form>
           
       <?php
-      $player1name="";
-      $player2name="";
-      if(isset($_POST['Players']))
+      
+      if(isset($_POST['Players_submit']))
       {
-        
-          $player1name=$_POST['player1_name'];
-          $player2name=$_POST['player2_name'];
+        $player1name=$_POST['player1_name'];
+        $player2name=$_POST['player2_name'];
+         
           // $player1scores =0;
           // $player2scores =0; 
 
@@ -114,7 +113,7 @@ session_start();
           $result=mysqli_query($connection,$sql);
           if($result)
           {
-            echo "<div style='text-align:center; font-weight:bold; '><div style='font-family:default'>names are added , match starts now !</div> <h3 style='font-family:Diplomata ;font-size: 22px; '>" . $player1name . "</h3> vs <h3 style='font-family:Diplomata ;font-size: 22px; '>" . $player2name . "</h3> </div>";
+            echo "<div style='text-align:center; font-weight:bold; '><div style='font-family:default'>names are added , match starts now !</div> <h3 style='font-family:Diplomata ;font-size: 18px; '>" . $player1name . "</h3> vs <h3 style='font-family:Diplomata ;font-size: 18px; '>" . $player2name . "</h3> </div>";
           }
         
       }
@@ -171,9 +170,9 @@ session_start();
         <div class="col col-lg-2" id="buttons1set">
           <div class="col-xs-1">
           <!-- should include buttons + and - -->
-          <form action="#" method="post">
-            <button name="playerOnePlus" type="button" class="btn btn-success" onclick="addingScores1(); scoresValidation();"><strong> + </strong></button>
-            <button name="playerTwoPlus" type="button" class="btn btn-success" onclick="subScores1();"><strong> - </strong></button>
+          <form action="scoresupdate.php" method="post">
+            <button name="player1plus_scores" type="button" class="btn btn-success" onclick="addingScores1(); scoresValidation();"><strong> + </strong></button>
+            <button name="player1minus_scores" type="button" class="btn btn-success" onclick="subScores1();"><strong> - </strong></button>
           </form>
           </div>
         </div>
@@ -183,8 +182,10 @@ session_start();
       
         <div class="col col-lg-2" id="buttons2set">
               <div class="col-xs-1">
-              <button type="button" class="btn btn-success" onclick="addingScores2();" ><strong> + </strong></button>
-              <button type="button" class="btn btn-success" onclick ="subScores2();"><strong> - </strong></button>
+              <form action="scoresupdate.php" method="post">
+              <button name="player2plus_scores" type="button" class="btn btn-success" onclick="addingScores2();" ><strong> + </strong></button>
+              <button name="player2minus_scores" type="button" class="btn btn-success" onclick ="subScores2();"><strong> - </strong></button>
+              </form>
               </div>
         </div>
         
