@@ -1,7 +1,8 @@
 <?php
 include_once 'connection.php' ;
 session_start();
-include_once ('scoresupdate.php');
+include_once('scoresupdate.php');
+require_once('scoresupdate.php');
 ?>
 
 <!doctype html>
@@ -37,10 +38,7 @@ include_once ('scoresupdate.php');
     /* font-family: 'Diplomata';font-size: 22px; */
     </style>
     <script src="scripts.js">
-    function visibility()
-    {
-      document.getElementById('scoreVisibleArea').style.visibility="hidden";
-    }
+    
     </script>
   </head>
   <body>
@@ -92,7 +90,7 @@ include_once ('scoresupdate.php');
             <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 " name="player2_name">  <!-- input box 2 name-->
           </div><p>
           <div style="float:center; padding-left:45%;">
-          <button type="submit" class="btn btn-primary mb-2" name="Players_submit" onclick="document.getElementById('scoreVisibleArea').style.display='block'">start match</button>
+          <button type="submit" class="btn btn-primary mb-2" name="Players_submit" onclick="visibleScores();">start match</button>
           </div>
         
           
@@ -137,14 +135,14 @@ include_once ('scoresupdate.php');
       <!-- view scores\\  match starting section -->
     <div id="scoreVisibleArea">
     <?php
-        require_once('scoresupdate.php');
+        
     ?>
       
       <div class="row justify-content-md-center" id="viewScores">
         <div class="col col-lg-2">
           <div class="col-xs-1">
                 <label for="ex1">Player 1 scores :</label>
-                <label for="score1" id="player1score" name="player1scores"><?php echo $results['first_set_player1']; ?></label>
+                <label for="score1" id="player1score" name="player1scores"><?php     ?></label>
                 <!-- <input class="form-control" id="ex1" type="text" readonly> -->
           </div>
         </div>

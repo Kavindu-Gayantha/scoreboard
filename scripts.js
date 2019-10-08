@@ -83,3 +83,11 @@ function winner()
 // }
 
 
+function visibleScores()
+{
+    var x = document.getElementById('scoreVisibleArea').style.display;
+    if(x==none)
+    {
+        x="block";
+    }
+}
