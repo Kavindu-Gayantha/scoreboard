@@ -69,7 +69,7 @@ require_once('scoresupdate.php');
       <hr class="my-4">
       <p>
       <fieldset>
-      <legend>court1 :</legend>
+      <legend>single :</legend>
       <!-- form starts -->
      
       <form class="form-inline" action="index.php" method="POST">
@@ -90,7 +90,7 @@ require_once('scoresupdate.php');
             <input type="text" class="form-control" id="playe2_name" placeholder="Player 2 " name="player2_name">  <!-- input box 2 name-->
           </div><p>
           <div style="float:center; padding-left:45%;">
-          <button type="submit" class="btn btn-primary mb-2" name="Players_submit" onclick="visibleScores();">start match</button>
+          <button type="submit" class="btn btn-primary mb-2" name="Players_submit" onclick="visibleScores()">start match</button>
           </div>
         
           
@@ -138,64 +138,7 @@ require_once('scoresupdate.php');
         
     ?>
       
-      <div class="row justify-content-md-center" id="viewScores">
-        <div class="col col-lg-2">
-          <div class="col-xs-1">
-                <label for="ex1">Player 1 scores :</label>
-                <label for="score1" id="player1score" name="player1scores"><?php     ?></label>
-                <!-- <input class="form-control" id="ex1" type="text" readonly> -->
-          </div>
-        </div>
-        <!-- <div class="col-md-auto">
-          Variable width content
-        </div> -->
-        <div class="col col-lg-2">
-              <div class="col-xs-1">
-                <label for="ex1">Player 2 scores :</label>
-                <label for="score2" id="player2score" name="player2scores">00</label>
-                <!-- <input class="form-control" id="ex2" type="text" readonly> -->
-              </div>
-        </div>
-        <!-- getting js variable into a php variable and send that value to the database -->
-        <!-- <script>
-          function getValue
-              var value = document.getElementById('player1score').innerHTML;
-            
-        </script> -->
       
-
-      </div><!--  score ends -->
-      
-      <p>
-          <p>
-      <div class="row justify-content-md-center"> <!-- + and - buttons for changing scores-->
-  
-        <div class="col col-lg-2" id="buttons1set">
-          <div class="col-xs-1">
-          <!-- should include buttons + and - -->
-          <form action="scoresupdate.php" method="post">
-            <button name="player1plus_scores" type="button" class="btn btn-success" onclick="addingScores1(); scoresValidation();"><strong> + </strong></button>
-            <button name="player1minus_scores" type="button" class="btn btn-success" onclick="subScores1();"><strong> - </strong></button>
-          </form>
-          </div>
-        </div>
-
-        
-      <!-- match end -->
-      
-        <div class="col col-lg-2" id="buttons2set">
-              <div class="col-xs-1">
-              <form action="scoresupdate.php" method="post">
-              <button name="player2plus_scores" type="button" class="btn btn-success" onclick="addingScores2();" ><strong> + </strong></button>
-              <button name="player2minus_scores" type="button" class="btn btn-success" onclick ="subScores2();"><strong> - </strong></button>
-              </form>
-              </div>
-        </div>
-        
-        
-<!-- end match -->
-
-      </div>
       
       <p>
         <div style="float:center; padding-left:45%;">
