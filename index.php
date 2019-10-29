@@ -2,7 +2,7 @@
 include_once 'connection.php' ;
 session_start();
 include_once('scoresupdate.php');
-require_once('scoresupdate.php');
+
 ?>
 
 <!doctype html>
