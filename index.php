@@ -96,37 +96,8 @@ require_once('scoresupdate.php');
           
       </form>
           
-      <?php
       
-      if(isset($_POST['Players_submit']))
-      {
-        $player1name=$_POST['player1_name'];
-        $player2name=$_POST['player2_name'];
-        $player1scores = 0;
-        $player2scores = 0;
-         
-          // $player1scores =0;
-          // $player2scores =0; 
-
-          
-          $sql= "INSERT INTO matchs (player1_first_name,player2_first_name,first_set_player1,first_set_player2) VALUES ('$player1name','$player2name','$player1scores','$player2scores')";
-         
-          $result=mysqli_query($connection,$sql);
-          if($result)
-          {
-            echo "<div style='text-align:center; font-weight:bold; '><div style='font-family:default'>names are added , match starts now !</div> <h3 style='font-family:Diplomata ;font-size: 18px; '>" . $player1name . "</h3> vs <h3 style='font-family:Diplomata ;font-size: 18px; '>" . $player2name . "</h3> </div>";
-          }
-        
-      }
-      ?>
-      <script>//localstorage
-      // var player_one = document.getElementById('player1_name').innerHTML;
-      // var player_two = document.getElementById('player2_name').innerHTML;
-      // localStorage.setItem("playerone",player_one);
-      // localStorage.setItem("playertwo",player_two);
-      // localStorage.setItem("playerone_startingScores","0");
-      // localStorage.setItem("playertwo_startingScores","0");
-      </script>
+     
       </fieldset>
       <!-- </p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
@@ -151,47 +122,7 @@ require_once('scoresupdate.php');
      
     </div><!-- jumbortan ends -->
   </div>
-    <?php
-        // function setValueIntoPHPvariable()
-        // {
-          $player1finalScore = '<script src="scripts.js">getValue();</script>'
-        //   function getValue(){
-        //       var value = document.getElementById('player1score').innerHTML;
-        //     }
-        // </script>";
-
-          // echo $player1finalScore;
-        // }
-         
-           
-          
-         
-          //$player2finalScore = 
-          // "
-          //   <script>
-          //   document.getElementById('player2score').innerHTML;
-          // "
-          // $player1name=$_POST['player1_name'];
-          // $player2name=$_POST['player2_name'];
-          
-          //now player1finalScore variable and player2finalScore variable are to send to the database 
-          //if(isset($_POST['confirmPlayers']))
-          // {
-            // if($player1finalScore>$player2finalScore)
-            // {
-            //   $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player1name')";
-            //   echo "player 1 won";
-            // }
-            // else
-            // {
-            //   $updateDBWinner = "INSERT INTO matches(wonBY) VALUES ('$player2name')";
-            //   echo "player 2 won";
-            // }
-            //$dbUpdateFinalScoreQuery = "INSERT INTO "
-          // }
-          //if is end
-
-        ?>
+    
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -211,18 +142,7 @@ require_once('scoresupdate.php');
     </div>
  
  </form>
- <?php
-  if(isset($_POST['confirm']))
-  {
-    $winner =$_POST['winnerOutput'];
-    $sql_update="INSERT INTO matchs(wonBy) VALUES('$winner')";
-    $winning_result =sqli_query($conneciton,$sql_update);
-    if($winning_result)
-    {
-      echo "updated database winner";
-    }
-  }
- ?>
+ 
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
